@@ -1,0 +1,39 @@
+import numpy as np
+import matplotlib.pyplot as plt
+
+srate = 256  # sampling rate in Hz
+t = np.arange(0., 1., 1/srate)  # time vector in seconds
+x1 = 5 * np.sin(2 * np.pi * 2 * t)  # first sinewave
+x2 = 2 * np.sin(2 * np.pi * 4 * t)  # second sinewave
+x3 = 7 * np.sin(2 * np.pi * 6 * t)  # third sinewave
+
+x4 = x1 + x2 + x3  # combined sinewave
+
+# plot every sine wave
+plt.figure(figsize=(12, 7))
+plt.suptitle("Constructing a Wave with Different Sine Waves")
+
+plt.subplot(2, 2, 1)
+plt.plot(t, x1, linewidth=1)
+plt.title("SineWave of amplitude '5' and frequency '2 Hz'", fontsize=10)
+
+plt.subplot(2, 2, 2)
+plt.plot(t, x2, linewidth=1)
+plt.title("SineWave of amplitude '2' and frequency '4 Hz'", fontsize=10)
+
+plt.xlabel('time in sec', fontsize=10)
+plt.ylabel('Amplitude', fontsize=10)
+
+plt.subplot(2, 2, 3)
+plt.plot(t, x3, linewidth=1)
+plt.title("SineWave of amplitude '2' and frequency '6 Hz'", fontsize=10)
+plt.xlabel('time in sec', fontsize=10)
+plt.ylabel('Amplitude', fontsize=10)
+
+plt.subplot(2, 2, 4)
+plt.plot(t, x4, linewidth=1)
+plt.title("Combined sinewave of above three sine wave", fontsize=10)
+plt.xlabel('time in sec', fontsize=10)
+plt.ylabel('Amplitude', fontsize=10)
+
+plt.show()
