@@ -22,19 +22,7 @@ for freq in range(0, len(t)):
 # extract amplitudes
 amps = np.abs(X) / len(t) 
 
-# plotting the signal and its fourier transform
-plt.figure(figsize=(10,5))
-plt.suptitle("signal and its fourier transform", fontsize = 10)
-
-plt.subplot(2, 2 , 1)
-plt.plot(t, x, linewidth= 1)
-plt.title('Signal of amplitude 3 and frequency of 5 Hz', fontsize = 10)
-plt.xlabel('time in sec', fontsize = 10)
-plt.ylabel('amplitude', fontsize = 10)
-
-plt.subplot(2, 2 , 2)
-markerline, stemlines, baseline = plt.stem(amps)
-plt.setp(stemlines, 'linewidth', 3)
-plt.title('Fourier transform of a signal', fontsize = 10)
-plt.xlabel('Indices', fontsize = 10)
-plt.ylabel('Amplitude', fontsize = 10)
+print(amps.shape)
+print(amps[22])
+print(t.shape)
+print(t)

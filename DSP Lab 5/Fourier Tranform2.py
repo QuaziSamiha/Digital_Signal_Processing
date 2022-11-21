@@ -22,19 +22,21 @@ for freq in range(0, len(t)):
 # extract amplitudes
 amps = np.abs(X) / len(t) 
 
-# plotting the signal and its fourier transform
-plt.figure(figsize=(10,5))
-plt.suptitle("signal and its fourier transform", fontsize = 10)
+print(amps.shape)
+print(amps[22])
+print(t.shape)
+print(t)
 
-plt.subplot(2, 2 , 1)
-plt.plot(t, x, linewidth= 1)
-plt.title('Signal of amplitude 3 and frequency of 5 Hz', fontsize = 10)
-plt.xlabel('time in sec', fontsize = 10)
-plt.ylabel('amplitude', fontsize = 10)
-
-plt.subplot(2, 2 , 2)
-markerline, stemlines, baseline = plt.stem(amps)
-plt.setp(stemlines, 'linewidth', 3)
-plt.title('Fourier transform of a signal', fontsize = 10)
-plt.xlabel('Indices', fontsize = 10)
-plt.ylabel('Amplitude', fontsize = 10)
+# plotting signal and complex sine wave
+plt.figure(figsize=(10, 5))
+plt.plot(t, x, linewidth=1, label="Signal with amp = 3 and frequency = 5 Hz")
+#  real part means cosine part
+plt.plot(t, 3*np.real(csw), 'r-', linewidth=1, label='real part of csw')
+# imag part has phase difference
+plt.plot(t, 3*np.imag(csw), 'm-', linewidth=1, label='imag part of csw')
+plt.xlabel('time', fontsize=10)
+plt.ylabel('amplitude', fontsize=10)
+plt.title("signal Modelling with complex sine wave", fontsize=10)
+plt.xlim([0, 1])
+plt.legend(fontsize=10)
+plt.show()
