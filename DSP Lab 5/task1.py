@@ -8,7 +8,7 @@ srate = 256  # sampling rate in Hz
 t = np.arange(0., 1., 1/srate)  # time vector in seconds
 amp = 3
 f = 5
-x = amp * np.size(2 * np.pi * f * t) # digital signal
+x = amp * np.sin(2 * np.pi * f * t) # digital signal
 
 # initializing fourier coefficient
 X = np.zeros(len(t), dtype=complex)
@@ -27,7 +27,7 @@ plt.figure(figsize=(10,5))
 plt.suptitle("signal and its fourier transform", fontsize = 10)
 
 plt.subplot(2, 2 , 1)
-plt.plot(t, x, linewidth= 1)
+plt.plot(t, X, linewidth= 1)
 plt.title('Signal of amplitude 3 and frequency of 5 Hz', fontsize = 10)
 plt.xlabel('time in sec', fontsize = 10)
 plt.ylabel('amplitude', fontsize = 10)

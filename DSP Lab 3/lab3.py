@@ -1,18 +1,17 @@
+# 26 September, 2022
 import numpy as np
 import matplotlib.pyplot as plt
-from matplotlib import style
 
 # Create a signal...
-srate = 256 # Hz
+srate = 256 # Hz sampling rate
 t = np.arange(0,3,1/srate)
-pnts = len(t)
+pnts = len(t) #The len() function returns the number of items in an object.
 
 x = np.sin(2*np.pi*2*t)
 noise = 5*np.random.randn(pnts)
 NoisySignal = x+noise
 
 plt.figure(figsize=(10,5))
-style.use('dark_background')
 plt.plot(t, NoisySignal, 'g', label='Noisy SIgnal')
 plt.legend(fontsize=10)
 plt.show()
@@ -31,8 +30,7 @@ for i in range(0, NoisySignal.shape[0]):
   filt_sig[i] = np.mean(NoisySignal[i:(2*N+1)+i])
 
 
-plt.figure(figsize=(10,5)) 
-style.use('dark_background')
+plt.figure(figsize=(10,5))
 
 plt.plot(t, NoisySignal, 'g-', label='Noisy Signal')
 plt.plot(t, filt_sig, 'r-', linewidth=3, label='Filtered Signal.')
