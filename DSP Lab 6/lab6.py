@@ -38,20 +38,20 @@ Hz = np.linspace(0, Nyquist, math.floor(len(t)/2 + 1))
 
 #  ploting the signal and its fourier transform
 
-plt.figure(figsize = (24, 12))
-plt.suptitle('Signal and its fourier transform', fontsize = 25)
+plt.figure(figsize = (10, 5))
+plt.suptitle('Signal and its fourier transform', fontsize = 10)
 style.use('dark_background')
 
-plt.subplot(2,2,1)
+plt.subplot(1,2,1)
 plt.plot(t, x, linewidth = 1)
-plt.title("signal of amplitude '3' and frequency '5' Hz", fontsize = 15)
-plt.xlabel('time in sec', fontsize = 15)
-plt.ylabel('Amplitude', fontsize = 15)
+plt.title("signal of amplitude '3' and frequency '5' Hz", fontsize = 10)
+plt.xlabel('time in sec', fontsize = 10)
+plt.ylabel('Amplitude', fontsize = 10)
 
 # extract amplitudes
 amps = np.abs(X) / len(t) 
 
-plt.subplot(2,2,2)
+plt.subplot(1,2,2)
 markerline, stemlines, baseline=plt.stem(Hz, amps[range(0, len(Hz))])
 plt.setp(stemlines, 'linewidth', 3)
 plt.xlim(0,10)
