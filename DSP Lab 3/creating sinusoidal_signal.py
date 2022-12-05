@@ -18,6 +18,6 @@ plt.figure(figsize=(10,5))
 
 # The plot() function in pyplot module of matplotlib library is used to make a 2D hexagonal binning plot of points x, y.
 plt.plot(t, x, 'b', label='Noisy SIgnal')
-
 plt.legend(fontsize=10)
+
 plt.show()
